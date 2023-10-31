@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,600");
 body {
   margin: 0;
-  background: #222;
+  background: white;
   font-family: "Work Sans", sans-serif;
   font-weight: 800;
 }
@@ -76,6 +76,10 @@ nav a:hover::before {
   display: none;
 }
 
+.logo h1 {
+  display: none;
+}
+
 .mobile-navbar {
   position: relative;
   display: inline-block;
@@ -118,12 +122,19 @@ nav a:hover::before {
   transition: all 0.3 ease-in-out;
 }
 
+.menu-links a:hover {
+  color: #3bb535;
+}
+
 .menu-links li {
   list-style: none;
 }
 
 .menu-links.open {
   max-height: 300px;
+  margin-top: 0;
+
+  background: #55d6aa;
 }
 
 .hamburger-menu.open span:first-child {
@@ -157,7 +168,25 @@ nav a:hover::before {
   .desktop {
     display: none;
   }
-  #mobile-nav {
+
+  #mobile-nav,
+  .logo h1 {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 756px) {
+  .mobile-navbar {
+    margin-left: 4rem;
+    margin-top: 1rem;
+  }
+
+  h1.desktop {
+    float: none;
+  }
+
+  .logo h1 {
+    margin-top: 1rem;
+    margin-left: -0.5rem;
   }
 }
